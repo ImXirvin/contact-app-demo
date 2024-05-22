@@ -16,7 +16,7 @@ const ContactDetails: React.FC = () => {
 				</p>
 			</div>
 
-			<div className='flex flex-col items-start justify-start gap-2  w-fit h-full relative'>
+			<div className='flex flex-col items-start justify-start gap-4  w-fit h-full relative'>
 
                 {/* Contact */}
 				<div className='flex flex-row items-center justify-center gap-2 w-full h-fit'>
