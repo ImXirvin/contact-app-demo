@@ -1,0 +1,84 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --surface-primary-value: 15 23 42;
+
+    --surface-secondary-value: 141 153 174;
+
+    --neutral-value: 237 242 244;
+
+    --primary-value: 14 165 233;
+
+    --secondary-value: 217 4 41;
+
+
+    --default-border-radius: 0.5vw;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: theme('colors.neutral');
+
+  background-color: theme('colors.surface-primary');
+}
+
+
+* {
+    @apply p-0 m-0 box-border selection:bg-primary/50 antialiased;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+
+    /* outline: 1px solid red; */
+}
+
+img {
+    @apply h-full w-full object-cover block select-none;
+}
+
+#app {
+    display: grid; 
+    grid-auto-rows: 1fr; 
+    grid-template-columns: 16rem auto; 
+    grid-template-rows: 5rem auto; 
+    grid-template-areas: 
+      "header header"
+      "sidebar content"; 
+}
+
+#header { grid-area: header; }
+#sidebar { grid-area: sidebar; }
+#content { grid-area: content; }
+
+
+@media (max-width: 767px) {
+    #app {
+        grid-template-columns: 0 1fr;
+        grid-template-rows: 5rem 1fr;
+        grid-template-areas: 
+        "header header"
+        "sidebar content"; 
+    }
+}
+
+button, input {
+    @apply transition-all duration-150 ease-in-out;
+}
+
+::-webkit-scrollbar {
+    @apply w-[5px] bg-[#0b1120];
+}
+::-webkit-scrollbar-track {
+    @apply bg-slate-200 dark:bg-[#0B1120];
+}
+::-webkit-scrollbar-thumb {
+    @apply rounded-xl bg-gray-600 dark:bg-slate-700;
+}
